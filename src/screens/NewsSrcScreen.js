@@ -58,7 +58,7 @@ const styles = StyleSheet.create({
   container: { flex: 1 },
   mainView: { flex: 1, alignItems: 'center', justifyContent: 'center' },
   title: { fontSize: 20, color: 'green' },
-  listView: { flex: 13 }
+  listView: { flex: 11 }
 });
 
 export default NewsSrcScreen;

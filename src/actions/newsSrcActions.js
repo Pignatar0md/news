@@ -17,8 +17,6 @@ export const getNews = () => async dispatch => {
     const data = await Endpoint(options);
     dispatch({ type: GET_NEWS_SRC_SUCCESS, payload: data.data.sources });
   } catch (e) {
-    console.log(e);
-    debugger
     dispatch({ type: GET_NEWS_SRC_ERROR, payload: `Error: ${e.toString()}` });
   }
 };
