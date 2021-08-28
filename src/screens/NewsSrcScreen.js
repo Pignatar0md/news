@@ -37,14 +37,15 @@ const NewsSrcScreen = ({ navigation: { navigate } }) => {
   if (errorMessage) {
     return <Text style={errMessageStyle}>{errorMessage}</Text>;
   } else {
-    return <SafeAreaView style={container}>
+    return <SafeAreaView testID="safvContainer" style={container}>
       <View style={mainView}>
-        <Text style={title}>
+        <Text style={title} testID="tTitle">
           You can pick a source here
         </Text>
       </View>
       <View style={listView}>
         <FlatList
+          testID="fListSources"
           data={data}
           keyExtractor={_keyExtractor}
           renderItem={_renderRow} />
