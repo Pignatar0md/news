@@ -18,14 +18,14 @@ export default (state = INITIAL_STATE, action) => {
 
   switch (type) {
     case GET_ARTICLES_SUCCESS:
-        return { ...state, errorMessage: '', data: payload.articles, loading: false, totalResults: payload.totalResults };
-      case GET_ARTICLES_UPD_PAGE:
-        return { ...state, page: payload };
-      case GET_ARTICLES:
-        return { ...state, errorMessage: '', loading: true  };
-      case GET_ARTICLES_ERROR:
-        return { ...state, errorMessage: payload , loading: false };
-      default:
-        return state;
+      return { ...state, errorMessage: '', data: payload.articles, loading: false, totalResults: payload.totalResults };
+    case GET_ARTICLES_UPD_PAGE:
+      return { ...state, page: payload };
+    case GET_ARTICLES:
+      return { ...state, errorMessage: '', loading: true  };
+    case GET_ARTICLES_ERROR:
+      return { ...state, errorMessage: payload , loading: false };
+    default:
+      return state;
   }
 };

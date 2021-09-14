@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { View, Text, FlatList, StyleSheet, SafeAreaView, Button } from 'react-native';
 import { useDispatch, useSelector } from 'react-redux';
 import { getArticles, updatePage } from '../actions/articlesActions';
-import { Spinner, ArticleItem } from "../components";
+import { Spinner, ArticleItem } from '../components';
 
 const ArticlesScreen = ({ route: { params } }) => {
 
@@ -71,10 +71,10 @@ const ArticlesScreen = ({ route: { params } }) => {
           disabled={dispayResults !== totalResults}
           onPress={() => onLoadMorePress('prev')}
           title="Prev Page" />
-          <Button
-            disabled={dispayResults === totalResults}
-            onPress={() => onLoadMorePress('next')}
-            title="Next Page" />
+        <Button
+          disabled={dispayResults === totalResults}
+          onPress={() => onLoadMorePress('next')}
+          title="Next Page" />
       </View>
     </SafeAreaView>;
   }

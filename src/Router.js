@@ -5,7 +5,6 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
 import NewsSrcScreen from './screens/NewsSrcScreen';
 import ArticlesScreen from './screens/ArticlesScreen';
-import { SafeAreaView } from 'react-native';
 
 const RouterComponent = () => {
 

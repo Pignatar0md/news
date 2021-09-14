@@ -15,12 +15,12 @@ export default (state = INITIAL_STATE, action) => {
 
   switch (type) {
     case GET_NEWS_SRC_SUCCESS:
-        return { ...state, errorMessage: '', data: payload, loading: false };
-      case GET_NEWS_SRC:
-        return { ...state, errorMessage: '', loading: true  };
-      case GET_NEWS_SRC_ERROR:
-        return { ...state, errorMessage: payload , loading: false };
-      default:
-        return state;
+      return { ...state, errorMessage: '', data: payload, loading: false };
+    case GET_NEWS_SRC:
+      return { ...state, errorMessage: '', loading: true  };
+    case GET_NEWS_SRC_ERROR:
+      return { ...state, errorMessage: payload , loading: false };
+    default:
+      return state;
   }
 };

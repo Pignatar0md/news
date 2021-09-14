@@ -37,7 +37,7 @@ const styles = StyleSheet.create({
     marginVertical: 10,
     backgroundColor: 'white',
     borderRadius: 8,
-    shadowColor: "#000",
+    shadowColor: '#000',
     shadowOffset: {
       width: 0,
       height: 10,
@@ -48,7 +48,7 @@ const styles = StyleSheet.create({
   },
   sourceName: {
     fontSize: 18,
-    fontWeight: "500",
+    fontWeight: '500',
     margin: 10,
     alignSelf: 'center'
   },
