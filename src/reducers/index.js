@@ -4,5 +4,5 @@ import articlesReducer from './articlesReducer';
 
 export default combineReducers({
   newsSources: newsSourcesReducer,
-  articles: articlesReducer
+  articles: articlesReducer,
 });

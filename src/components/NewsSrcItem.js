@@ -2,30 +2,15 @@ import React from 'react';
 import { StyleSheet, Text, TouchableOpacity } from 'react-native';
 
 const NewsSrcItem = ({ item, onClick }) => {
-
-  const {
-    container,
-    sourceName,
-    sourceDescription,
-    urlStyle
-  } = styles;
+  const { container, sourceName, sourceDescription, urlStyle } = styles;
 
   const { description, name, url } = item;
 
   return (
-    <TouchableOpacity
-      style={container}
-      onPress={onClick}
-    >
-      <Text style={sourceName}>
-        {name}
-      </Text>
-      <Text style={sourceDescription}>
-        {description}
-      </Text>
-      <Text style={urlStyle}>
-        url: {url}
-      </Text>
+    <TouchableOpacity style={container} onPress={onClick}>
+      <Text style={sourceName}>{name}</Text>
+      <Text style={sourceDescription}>{description}</Text>
+      <Text style={urlStyle}>url: {url}</Text>
     </TouchableOpacity>
   );
 };
@@ -50,16 +35,16 @@ const styles = StyleSheet.create({
     fontSize: 18,
     fontWeight: '500',
     margin: 10,
-    alignSelf: 'center'
+    alignSelf: 'center',
   },
   sourceDescription: {
     fontSize: 12,
-    margin: 10
+    margin: 10,
   },
   urlStyle: {
     color: 'blue',
-    margin: 10
-  }
+    margin: 10,
+  },
 });
 
 export { NewsSrcItem };

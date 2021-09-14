@@ -20,7 +20,8 @@ module.exports = {
     },
     'plugins': [
         'react',
-        'react-hooks'
+        'react-hooks',
+        'prettier'
     ],
     'rules': {
         'indent': [
@@ -44,6 +45,7 @@ module.exports = {
         'no-empty-function': 'off',
         'react/display-name': 'off',
         'react/prop-types': 'off',
+        'prettier/prettier': 'error',
     },
     'settings': {
         react: { version: 'detect' },

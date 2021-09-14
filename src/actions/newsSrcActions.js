@@ -1,16 +1,11 @@
-import {
-  GET_NEWS_SRC_SUCCESS,
-  GET_NEWS_SRC_ERROR,
-  GET_NEWS_SRC
-} from './types';
+import { GET_NEWS_SRC_SUCCESS, GET_NEWS_SRC_ERROR, GET_NEWS_SRC } from './types';
 import Endpoint from '../api/Endpoint';
 import { NEWS_API_KEY } from '../constants';
 
-export const getNews = () => async dispatch => {
-
+export const getNews = () => async (dispatch) => {
   const options = {
     method: 'GET',
-    url: `top-headlines/sources?apiKey=${NEWS_API_KEY}`
+    url: `top-headlines/sources?apiKey=${NEWS_API_KEY}`,
   };
   dispatch({ type: GET_NEWS_SRC });
   try {

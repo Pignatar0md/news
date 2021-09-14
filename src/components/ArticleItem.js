@@ -2,7 +2,6 @@ import React from 'react';
 import { StyleSheet, Text, View, Image } from 'react-native';
 
 const ArticleItem = ({ item }) => {
-
   const {
     container,
     titleStyle,
@@ -11,36 +10,26 @@ const ArticleItem = ({ item }) => {
     authorContainer,
     authorLegend,
     authorName,
-    publicationDate
+    publicationDate,
   } = styles;
 
   const { author, content, title, urlToImage } = item;
   const pubDate = new Date(item.publishedAt);
 
-  return <View style={container}>
-    <Text style={titleStyle}>
-      {title}
-    </Text>
-    <View style={{ alignItems: 'stretch' }}>
-      <Image
-        source={{ uri: urlToImage }}
-        style={image} />
-      <Text style={textContent}>
-        {content}
-      </Text>
-      <View style={authorContainer}>
-        <Text style={authorLegend}>
-          Author: 
-        </Text>
-        <Text style={authorName}>
-          {author}
-        </Text>
+  return (
+    <View style={container}>
+      <Text style={titleStyle}>{title}</Text>
+      <View style={{ alignItems: 'stretch' }}>
+        <Image source={{ uri: urlToImage }} style={image} />
+        <Text style={textContent}>{content}</Text>
+        <View style={authorContainer}>
+          <Text style={authorLegend}>Author:</Text>
+          <Text style={authorName}>{author}</Text>
+        </View>
+        <Text style={publicationDate}>{pubDate.toLocaleDateString()}</Text>
       </View>
-      <Text style={publicationDate}>
-        {pubDate.toLocaleDateString()}
-      </Text>
     </View>
-  </View>;
+  );
 };
 
 const styles = StyleSheet.create({
@@ -65,7 +54,7 @@ const styles = StyleSheet.create({
   authorContainer: { flexDirection: 'row', margin: 15 },
   authorLegend: { fontSize: 12, fontWeight: '500' },
   authorName: { fontSize: 12, color: 'blue', marginHorizontal: 10 },
-  publicationDate: { fontSize: 12, color: 'darkgreen', margin: 15, alignSelf: 'flex-end' }
+  publicationDate: { fontSize: 12, color: 'darkgreen', margin: 15, alignSelf: 'flex-end' },
 });
 
 export { ArticleItem };

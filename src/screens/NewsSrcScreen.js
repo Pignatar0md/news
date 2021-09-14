@@ -5,20 +5,9 @@ import { getNews } from '../actions/newsSrcActions';
 import { Spinner, NewsSrcItem } from '../components';
 
 const NewsSrcScreen = ({ navigation: { navigate } }) => {
+  const { errMessageStyle, container, mainView, title, listView } = styles;
 
-  const {
-    errMessageStyle,
-    container,
-    mainView,
-    title,
-    listView
-  } = styles;
-
-  const {
-    errorMessage,
-    loading,
-    data
-  } = useSelector(({ newsSources }) => newsSources);
+  const { errorMessage, loading, data } = useSelector(({ newsSources }) => newsSources);
 
   const dispatch = useDispatch();
 
@@ -29,7 +18,7 @@ const NewsSrcScreen = ({ navigation: { navigate } }) => {
   const _keyExtractor = ({ id }) => id;
 
   const onPressSrc = ({ id }) => navigate('Articles', { src: id });
-  
+
   const _renderRow = ({ item }) => <NewsSrcItem item={item} onClick={() => onPressSrc(item)} />;
 
   loading && <Spinner size="large" />;
@@ -37,20 +26,23 @@ const NewsSrcScreen = ({ navigation: { navigate } }) => {
   if (errorMessage) {
     return <Text style={errMessageStyle}>{errorMessage}</Text>;
   } else {
-    return <SafeAreaView testID="safvContainer" style={container}>
-      <View style={mainView}>
-        <Text style={title} testID="tTitle">
-          You can pick a source here
-        </Text>
-      </View>
-      <View style={listView}>
-        <FlatList
-          testID="fListSources"
-          data={data}
-          keyExtractor={_keyExtractor}
-          renderItem={_renderRow} />
-      </View>
-    </SafeAreaView>;
+    return (
+      <SafeAreaView testID="safvContainer" style={container}>
+        <View style={mainView}>
+          <Text style={title} testID="tTitle">
+            You can pick a source here
+          </Text>
+        </View>
+        <View style={listView}>
+          <FlatList
+            testID="fListSources"
+            data={data}
+            keyExtractor={_keyExtractor}
+            renderItem={_renderRow}
+          />
+        </View>
+      </SafeAreaView>
+    );
   }
 };
 
@@ -59,7 +51,7 @@ const styles = StyleSheet.create({
   container: { flex: 1 },
   mainView: { flex: 1, alignItems: 'center', justifyContent: 'center' },
   title: { fontSize: 20, color: 'green' },
-  listView: { flex: 11 }
+  listView: { flex: 11 },
 });
 
 export default NewsSrcScreen;
