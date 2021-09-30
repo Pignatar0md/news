@@ -1,0 +1,14 @@
+Platforms:
+The app only has an android folder. The package.json file indicates that there is a script to run the iOS version, but there is no iOS folder in the project. The app doesn't work on iOS.
+
+The eslint:
+The eslint script is available but it is not working, because a file is missing. It is not mandatory to have it but it is standard practice to keep code consistent, so it is a big plus to have it. 
+
+Coding:
+- The strings are hardcoded. There is no possibility to add i18n, or a single resource file to easily change the strings.
+- The styling in the app is not ideal. There is no themeing, no typography defined, no spacing handled, no colors library.
+
+There are also several points in the code that could have been done better. For example:
+- Difficult to understand code like: https://github.com/Pignatar0md/news/blob/master/src/screens/ArticlesScreen.js#L47
+- Unnecessary use of else, when it should have been a precondition: https://github.com/Pignatar0md/news/blob/master/src/screens/ArticlesScreen.js#L49
+- Unnecessary axios wrapper:
